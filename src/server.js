@@ -10,10 +10,10 @@ const config = {
     port: 5432
 };
 const postgres = new pg.Pool(config);
-const server = new WebSocket.Server({ port: 3001 })
+const server = new WebSocket.Server({ port: 80 })
 let allS = []
 let WS = (S, json) => S.send(JSON.stringify(json))
-console.log("Iniciado servidor de WebSocket na porta 3001!");
+console.log("Iniciado servidor de WebSocket na porta 80!");
 
 let infoT = {
     pessoa: {
