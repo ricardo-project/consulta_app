@@ -4,13 +4,13 @@ const { randomInt } = require('crypto');
 
 const config = {
     host: 'localhost',
-    user: 'postgres',
-    database: 'consulta',
-    password: 'ricardo',
+    user: 'ricardo',
+    database: 'consulta_9ysb',
+    password: 'cmKxbwIdMx6VS0jKITl6F32Rn4hSMYhg',
     port: 5432
 };
 const postgres = new pg.Pool(config);
-const server = new WebSocket.Server({ port: 80 })
+const server = new WebSocket.Server({ port: process.env.PORT || 80 })
 let allS = []
 let WS = (S, json) => S.send(JSON.stringify(json))
 console.log("Iniciado servidor de WebSocket na porta 80!");
