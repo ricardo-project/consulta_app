@@ -40,42 +40,11 @@ values (10, 'Rua Lorem', '54999999999', 'Passo Fundo');
 insert into pessoa
 values ('12345678902', '123456789', 'Ricardo', '2004-04-26', 'Santa Maria', 'M')
 
+insert into usuarios values ('ricardoamgermani@gmail.com', 'teste', 'A', 'Ricardo Augusto');
+insert into usuarios values ('teste@teste.com', 'teste', 'A', 'UsuTeste');
+
+
 
 drop table consulta;
 drop table pessoa;
 drop table casa;
-
-/*{
-        "nome": "Ricardo",
-        "data": "26/04/2004",
-        "sexo": "Masculino",
-        "cidade_natal": "Santa Maria"
-      },
-      {
-        "nome": "Lúcio",
-        "data": "21/03/1990",
-        "sexo": "Masculino",
-        "cidade_natal": "Passo Fundo"
-      }*/
-
-
-/*{
-        "endereco": "Rua Ipsum",
-        "complemento": "Lorem ipsum",
-      },
-      {
-        "endereco": "Rua Lorem",
-        "complemento": ""
-      }
-    ]*/
-
-
-/*{
-        "descricao": "Consulta realizada com sucesso",
-        "consultor": "Roberto"
-      },
-      {
-        "descricao": "Consulta adiada",
-        "consultor": "Bianca"
-      }
-    ]*/
