@@ -1,0 +1,480 @@
+html, body, h1, h2, p {
+  margin: 0
+}
+body {
+  overflow: hidden;
+  user-select: none;
+}
+.loader {
+  width: 50px;
+  height: 50px;
+  padding: 15px;
+  margin: auto;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #86b340;
+  --_m: 
+    conic-gradient(#0000 10%,#000),
+    linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+          mask: var(--_m);
+  -webkit-mask-composite: source-out;
+          mask-composite: subtract;
+  animation: l3 0.9s infinite linear;
+}
+@keyframes l3 {to{transform: rotate(1turn)}}
+
+textarea {
+  resize: none;
+  height: 150px;
+}
+::-webkit-scrollbar {
+  width: 20px;
+  background: rgb(104, 156, 51)
+}
+.select::-webkit-scrollbar {
+  width: 12px
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(209, 233, 183)
+}
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  text-align: center;
+  font-family: DM Sans;
+  background: linear-gradient(to right, rgb(23, 65, 15), rgb(12, 57, 45));
+  color: rgb(237, 243, 233);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+b {
+  letter-spacing: 0.2px;
+}
+.login {
+  margin: auto;
+  text-align: left;
+}
+.login > div {
+  margin-bottom: 20px
+}
+.login > div > p {
+  font-size: 14px;
+}
+.login_title {
+  font-family: "Lobster Two";
+  font-size: 60px;
+  margin-bottom: 30px;
+  text-align: center
+}
+.message {
+  width: 100%;
+  height: 0px;
+}
+.message_msg {
+  position: absolute;
+  z-index: 3;
+  bottom: 0;
+  width: 100%;
+  left: -100%;
+  display: -webkit-box;
+  overflow: hidden;
+  color: white;
+  opacity: 0.5;
+  box-shadow: rgb(0,0,0,0.2) 0px -5px 10px;
+  transition: left 0.8s ease, opacity 0.8s ease
+}
+.message_reflexo {
+  position: absolute;
+  width: 70px;
+  background: linear-gradient(to right, rgb(255,255,255,0.3), rgb(255,255,255,0.2));
+  height: calc(100% + 30px);
+  top: -15px;
+  left: -100px;
+  transform: rotate(20deg);
+  transition: left cubic-bezier(.9,-0.01,.1,1) 1.2s
+}
+.message_div {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: auto;
+  padding: 20px;
+}
+.message_msg.success {
+  background: linear-gradient(to right, rgb(0, 128, 75), rgb(0, 116, 67));
+}
+.message_msg.failed {
+  background: linear-gradient(to right, rgb(173, 102, 20), rgb(194, 58, 103));
+}
+.message_msg i {
+  margin-right: 10px;
+  font-size: 40px;
+}
+.transit {
+  position: absolute;
+  z-index: 4;
+  width: 100vw;
+  height: 0%;
+  background: rgb(136, 177, 54)
+}
+.form {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  left: -100%;
+  display: -webkit-box;
+  background: linear-gradient(to right, rgba(5,12,1,0.9), rgb(5,12,1,0.6));
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.form_lists {
+  margin-top: 0;
+  transition: margin-top cubic-bezier(.75,0,.25,1) 0.8s
+}
+.form_list {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.form_p {
+  display: flex;
+  align-items: center;
+}
+.form_item {
+  margin: 20px 0px
+}
+.form_FORM {
+  margin: auto;
+}
+.form_form {
+  margin: 20px 0px;
+  padding: 30px;
+  text-align: left;
+  font-weight: bold;
+  letter-spacing: 0.6px;
+  background: linear-gradient(to right, rgb(22, 93, 13), rgb(8, 76, 9));
+  box-shadow: rgb(0,0,0,0.4) 5px 5px 0px
+}
+.form_msg {
+  font-size: 12px;
+  font-weight: normal;
+  font-style: italic
+}
+input[type=text], input[type=password], input[type=date], select, textarea {
+  width: calc(100vw - 200px);
+  max-width: 400px;
+  margin-top: 10px;
+  border: none;
+  background: none;
+  outline: none;
+  font-family: DM Sans;
+  font-size: 17px;
+  color: rgb(237, 243, 233);
+  border-bottom: 2px solid rgb(237, 243, 233)
+}
+.select {
+  width: calc(100vw - 200px);
+  max-width: 400px;
+  max-height: 200px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-radius: 10px;
+  box-shadow: rgb(0,0,0,0.4) 0px 0px 10px inset;
+  background: linear-gradient(to right, rgb(25, 57, 5), rgb(20, 48, 3));
+}
+.menu {
+  width: 85px;
+  height: 100vh;
+}
+.menu_back {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  left: -100%;
+  background: linear-gradient(to right, rgba(5,12,1,0.9), rgb(5,12,1,0.6));
+  transition: opacity 0.5s ease
+}
+.menu_close .menu_back {
+  opacity: 1;
+  left: 0;
+}
+.menu_transit .menu_back {
+  opacity: 0;
+  left: 0;
+}
+.menu_menu {
+  text-align: left;
+  height: 100%;
+  display: -webkit-box;
+  filter: drop-shadow(rgba(16, 29, 4, 0.5) 0px 0px 10px);
+  transition: all 0.8s ease
+}
+.menu_nome {
+  font-size: 22px;
+  font-weight: bold
+}
+.menu_email{
+  font-size: 16px
+}
+.menu_user {
+  position: relative;
+  font-family: Inter Tight;
+  color: rgb(61, 121, 24);
+  width: 270px;
+  background: white;
+  border-bottom: 0px solid rgb(51, 104, 17);
+  transition: height 0.8s ease, border-bottom 0.8s ease
+}
+.menu_user > i {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: rgb(61, 121, 24);
+  transition: all 0.15s ease
+}
+.menu_user > i:hover {
+  font-size: 30px
+}
+.menu_user > div {
+  bottom: 0;
+  position: absolute;
+  padding: 20px 10px
+}
+.menu_open .menu_menu, .menu_transit .menu_menu {
+  width: 85px;
+}
+.menu_open .menu_user, .menu_transit .menu_user {
+  height: 0px;
+}
+.menu_close .menu_menu {
+  width: 270px;
+}
+.menu_close .menu_user {
+  height: 200px;
+  border-bottom-width: 10px
+}
+.menu_MENU {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+  background: rgb(61, 121, 24);
+}
+.menu_opt {
+  overflow: hidden;
+  display: -webkit-box;
+  cursor: pointer;
+  background: rgb(51, 105, 17);
+  border-radius: 20px 20px 0px 0px;
+  border-bottom: 4px solid rgb(31, 71, 6);
+  box-shadow: rgb(0,0,0,0.1) -6px 3px 0px inset;
+  margin: 20px 0px;
+  padding: 10px;
+  transition: all 0.25s ease
+}
+.menu_opt:hover {
+  background: rgb(42, 88, 13);
+}
+.menu_opt_s {
+  background: rgb(71, 87, 14);
+  border-color: rgb(52, 63, 4)
+}
+.menu_opt_s:hover {
+  background: rgb(59, 73, 10);
+}
+.menu_opt div {
+  margin: auto;
+  width: min-content;
+  display: -webkit-box;
+  height: 35px;
+}
+.menu_opt i {
+  font-size: 35px;
+  margin-right: 10px;
+}
+.menu_opt p {
+  margin: auto;
+}
+.menu_aba {
+  width: 0px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.aba {
+  position: absolute;
+  height: 200px;
+  width: 40px;
+  border-radius: 0px 40px 40px 0px;
+  background: rgb(61, 121, 24);
+  cursor: pointer;
+  display: -webkit-box;
+}
+.aba_seta {
+  width: 0px;
+  height: 0px;
+  margin: auto;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent
+}
+.menu_close .aba_seta {
+  border-right: 15px solid rgb(211, 235, 183);
+}
+.menu_open .aba_seta, .menu_transit .aba_seta {
+  border-left: 15px solid rgb(211, 235, 183);
+}
+option {
+  background: rgb(6, 89, 50)
+}
+.option {
+  padding: 8px;
+  font-weight: normal;
+  cursor: pointer;
+  color: rgb(205, 223, 194);
+  border-bottom: 2px solid rgb(61, 100, 38)
+}
+.option.optSelect {
+  color: white;
+  font-weight: bold;
+  background: rgb(0,0,0,0.4)
+}
+.option.optSelect > p:nth-child(1) {
+  font-size: 18px;
+}
+.option > p:nth-child(2) {
+  font-size: 10px;
+  text-align: right
+}
+input[type=button] {
+  font-size: 25px;
+  font-family: DM Sans;
+  font-weight: bold;
+  border: none;
+  border-radius: 40px;
+  margin: 8px;
+  padding: 10px 20px;
+  background: rgb(68, 127, 31);
+  box-shadow: rgb(0,0,0,0.2) -3px -3px 0px inset;
+  color: rgb(237, 243, 233);
+  cursor: pointer;
+  transition: all 0.3s ease
+}
+input[type=button]:hover {
+  font-size: 30px;
+  background: rgb(92, 153, 54);
+}
+.title {
+  padding: 20px;
+  background: linear-gradient(to right, rgb(32, 110, 58), rgb(21, 80, 79));
+  box-shadow: rgb(0,0,0,0.4) 0px 0px 20px;
+}
+.attr_nome {
+  font-weight: bold;
+  font-size: 20px;
+  padding: 20px 10px;
+  font-family: Inter Tight;
+  border-bottom: 3px solid rgb(161, 183, 146)
+}
+.attr_data {
+  border-bottom: 1px solid rgb(127, 158, 107)
+}
+.attr_data > div {
+  padding: 12px 8px;
+}
+.attr_nome, .attr_data {
+  display: flex;
+}
+.attr_data:nth-child(4n) {
+  background: rgba(50, 2, 2, 0.3)
+}
+.attr_data:nth-child(4n + 1) {
+  background: rgba(52, 46, 3, 0.3)
+}
+.attr_data:nth-child(4n + 2) {
+  background: rgba(2, 10, 37, 0.3)
+}
+.attr_data:nth-child(4n + 3) {
+  background: rgba(42, 1, 36, 0.3)
+}
+.p_delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.p_delete i {
+  font-size: 50px;
+  margin: auto 3px;
+  text-shadow: rgb(0,0,0,0.05) 3px 3px 0px;
+  transition: all 0.2s ease
+}
+.p_delete i:hover {
+  font-size: 70px
+}
+.p_delete i:nth-child(1) {
+  color: rgb(190, 236, 114)
+}
+.p_delete i:nth-child(2) {
+  color: rgb(255, 129, 129)
+}
+th {
+  font-weight: normal
+}
+table > tr:nth-child(1) > th {
+  font-weight: bold;
+  letter-spacing: 0.4px;
+  padding: 10px;
+}
+.table_list {
+  display: flex;
+}
+i.material-icons:not(.message_div > i.material-icons) {
+  cursor: pointer
+}
+.x-icon {
+  position: fixed;
+  right: -40px;
+  top: 4px;
+  font-size: 40px;
+  cursor: pointer;
+  transition: font-size 0.2s ease, right 0.8s ease-in-out
+}
+.x-icon:hover {
+  font-size: 50px
+}
+.form_wrong {
+  color: rgb(255, 171, 171)
+}
+.form_wrong input, .form_wrong select, .form_wrong textarea {
+  color: rgb(255, 171, 171);
+  border-color: rgb(255, 171, 171)
+}
+.form_atention {
+  color: rgb(250, 233, 165)
+}
+.form_atention input, .form_atention select, .form_atention textarea {
+  color: rgb(250, 233, 165);
+  border-color: rgb(250, 233, 165)
+}
+.form_wrong option {
+  background: rgb(111, 22, 40);
+}
+.form_atention option {
+  background: rgb(92, 80, 23);
+}
+.add {
+  font-size: 35px;
+  margin-left: 8px;
+}
+.icon {
+  font-size: 50px;
+  margin-right: 12px;
+}
