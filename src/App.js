@@ -8,7 +8,7 @@ import Delete from "./Delete.jsx";
 import Menu from "./Menu.jsx";
 import Form from "./Form.jsx";
 
-const WS_URL = 'ws://127.0.0.1:3001';
+const WS_URL = 'wss://consulta-app.onrender.com';
 let infoT = [
   {
     nome: "Pessoas",
